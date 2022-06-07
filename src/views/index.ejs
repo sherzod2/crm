@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/admin/home.css" />
+    <title>admin</title>
+  </head>
+  <body>
+    <div class="body__left"><%- include("./partials/navigation.ejs") %></div>
+
+    <div class="body__right">
+      <header class="header">
+        <%- include("./partials/header.ejs", {data: "Admin"}) %>
+      </header>
+
+      <main class="main main-home">
+        <%- include("./partialsAdmin/home.ejs", {studentsCount: students.length,
+        groupsCount: groups.length, teachersCount: teachers.length,
+        coursesCount: courses.length }) %>
+      </main>
+
+      <main class="main main-students hidden">
+        <%- include("./partialsAdmin/students.ejs", {students, courses, groups})
+        %>
+      </main>
+
+      <main class="main main-teacher hidden">
+        <%- include("./partialsAdmin/teacher.ejs", {teachers, courses}) %>
+      </main>
+
+      <main class="main main-group hidden">
+        <%- include("./partialsAdmin/group.ejs", {groups, teachers}) %>
+      </main>
+
+      <main class="main main-courses hidden">
+        <%- include("./partialsAdmin/courses.ejs", {courses}) %>
+      </main>
+
+      <footer></footer>
+    </div>
+    <script src="/js/adminJS/index.js"></script>
+  </body>
+</html>

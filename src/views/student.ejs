@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/student/student.css" />
+    <title>student</title>
+  </head>
+  <body>
+    <div class="body__left">
+      <%- include("./partials/navigationStudent.ejs", {groups: student.groups })
+      %>
+    </div>
+
+    <div class="body__right">
+      <header class="header">
+        <%- include("./partials/header.ejs", {data: student.username}) %>
+      </header>
+
+      <main class="main">
+        <section class="homework">
+          <div class="container">
+            <div class="homework__body">
+              <% student?.groups.map((group) => { %>
+              <div class="homework__card">
+                <div class="homework__title-wrapper">
+                  <h4 class="homework__title"><%= group.homework.title %></h4>
+                </div>
+                <div class="homework__desc-wrapper">
+                  <p class="homework__desc"><%= group.homework.desc %></p>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/js/studentJS/student.js"></script>
+  </body>
+</html>

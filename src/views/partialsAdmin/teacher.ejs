@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/admin/teacher.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="newstudent">
+      <div class="container">
+        <form class="newstudent__form" action="/newTeacher" method="POST">
+          <h2 class="newstudent__form--title">Add new teacher</h2>
+          <div class="newstudent__form--data">
+            <div class="newstudent__form--data-box">
+              <label>Teacher's name</label>
+              <input type="text" name="username" placeholder="username" />
+            </div>
+            <div class="newstudent__form--data-box">
+              <label>Password</label>
+              <input type="text" name="password" placeholder="password" />
+            </div>
+            <div class="newstudent__form--data-box">
+              <label>Teacher's course</label>
+              <select class="newstudent__course" name="courseId">
+                <option value="fwfwf" disabled selected>Courses</option>
+                <% courses?.map((course) => { %>
+                <option value="<%= course?.id %> ">
+                  <%= course?.courseName %>
+                </option>
+                <% }) %>
+              </select>
+            </div>
+          </div>
+          <div class="newstudent__form--btn">
+            <button type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="studentlist">
+      <div class="container">
+        <div class="studentlist__body">
+          <h1 class="studentlist__title">Our teachers</h1>
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 6%">№</th>
+                <th style="width: 37%">Username</th>
+                <th>Course</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody style="width: 100%">
+              <% teachers?.map((teacher, index) => { %>
+              <tr>
+                <td><%= index %></td>
+                <td><%= teacher?.username %></td>
+                <td><%= teacher?.course?.courseName %></td>
+                <td
+                  class="delete-teacher-btn delete-btn"
+                  style="width: 10%"
+                  data-id="<%= teacher?.id %>"
+                >
+                  <a href="/admin">
+                    <img
+                      data-id="<%= teacher?.id %>"
+                      src="images/delete.png"
+                      alt="delete foto"
+                      width="18"
+                      height="19"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "courseName": "SMM",
+        "price": 120
+    },
+    {
+        "id": 2,
+        "courseName": "Beckend",
+        "price": 70
+    },
+    {
+        "id": 3,
+        "courseName": "Grafik Design",
+        "price": "160"
+    },
+    {
+        "id": 4,
+        "courseName": "fefer",
+        "price": "48293472"
+    },
+    {
+        "id": 5,
+        "courseName": "dwde",
+        "price": "48293472"
+    },
+    {
+        "id": 6,
+        "courseName": "IOS",
+        "price": "200"
+    }
+]

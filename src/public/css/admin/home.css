@@ -1,0 +1,48 @@
+/* main */
+.deport__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.deport__item {
+  position: relative;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+  width: 500px;
+  height: 228px;
+  margin: 15px;
+}
+
+.deport__item-title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.deport__item-count-desc {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -1px;
+}
+
+.deport__item-img {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.delete-btn:hover {
+  opacity: 0.8;
+}
+
+.delete-btn:active {
+  opacity: 0.6;
+}

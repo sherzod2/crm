@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "teacherName": "Akobir",
+    "groupName": "SMM119"
+  },
+  {
+    "id": 2,
+    "teacherName": "Akobir",
+    "groupName": "SMM117"
+  },
+  {
+    "id": 3,
+    "teacherName": "Suxrob",
+    "groupName": "WEB117"
+  },
+  {
+    "id": 4,
+    "teacherName": "Suxrob",
+    "groupName": "WEB119"
+  },
+  {
+    "id": 5,
+    "teacherName": "Javlon",
+    "groupName": "graph design1"
+  },
+  {
+    "id": 6,
+    "teacherName": "IOS man",
+    "groupName": "IOS group"
+  }
+]

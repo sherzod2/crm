@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/admin/students.css" />
+    <title>student</title>
+  </head>
+  <body>
+    <section class="newstudent">
+      <div class="container">
+        <form class="newstudent__form" action="/newStudent" method="POST">
+          <h2 class="newstudent__form--title">Add new student</h2>
+          <div class="newstudent__form--data">
+            <div class="newstudent__form--data-box">
+              <label>Student's name</label>
+              <input type="text" name="username" placeholder="username" />
+            </div>
+            <div class="newstudent__form--data-box">
+              <label>Password</label>
+              <input type="text" name="password" placeholder="password" />
+            </div>
+            <div class="newstudent__form--data-box">
+              <label>Student's course</label>
+              <select
+                class="newstudent__course"
+                name="course"
+                onchange="handleChangeSelect()"
+                id="Select"
+              >
+                <option value="fwfwf" disabled selected>Courses</option>
+                <% courses?.map((course) => { %>
+                <option value="<%= course?.courseName %>">
+                  <%= course?.courseName %>
+                </option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="newstudent__form--data-box">
+              <label>Student's group</label>
+              <select class="newstudent__course" name="group">
+                <option value="fwfwf" disabled selected>Groups</option>
+                <% groups?.map((group) => { %>
+                <option value="<%= group?.id %>">
+                  <%= group?.groupName %>
+                </option>
+                <% }) %>
+              </select>
+            </div>
+          </div>
+          <div class="newstudent__form--btn">
+            <button type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="studentlist">
+      <div class="container">
+        <div class="studentlist__body">
+          <h1 class="studentlist__title">Our students</h1>
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 6%">№</th>
+                <th style="width: 37%">Username</th>
+                <th>Group</th>
+                <th>Course</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="student__tbody" style="width: 100%">
+              <% students?.map((student, index) => { %>
+              <tr>
+                <td><%= index+1 %></td>
+                <td><%= student?.username %></td>
+                <td>
+                  <% student?.groups?.map((group) => { %>
+                  <p><%= group.groupName %></p>
+                  <% }) %>
+                </td>
+                <td>
+                  <% student?.groups?.map((group) => { %>
+                  <p><%= group?.course?.courseName %></p>
+                  <% }) %>
+                </td>
+                <td
+                  class="delete-student-btn delete-btn"
+                  style="width: 10%"
+                  id="<%= student?.id %>"
+                  data-name="<%= student?.id %>"
+                >
+                  <a href="/admin">
+                    <img
+                      data-name="<%= student?.id %>"
+                      src="images/delete.png"
+                      alt="delete foto"
+                      width="18"
+                      height="19"
+                    />
+                  </a>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const handleChangeSelect = (n) => {
+        //
+      };
+    </script>
+  </body>
+</html>

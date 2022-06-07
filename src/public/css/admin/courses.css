@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+.newstudent__form {
+  padding: 32px 51px 80px 50px;
+}
+
+/* student section title */
+.newstudent__form--title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+  color: #0061f7;
+}
+
+/* formning ichidagi label va inputlar */
+
+.newstudent__form--data {
+  /* display: flex;
+      align-items: center;
+      flex-wrap: wrap;*/
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+}
+
+.newstudent__form--data-box {
+  /* display: flex;
+      flex-direction: column; */
+  padding-right: 32px;
+  margin-bottom: 32px;
+}
+
+.newstudent__course {
+  margin-top: 16px;
+  width: 320px;
+  height: 48px;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fff;
+}
+
+.newstudent__course option {
+  height: 100px;
+}
+
+.newstudent__form--data-box label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+}
+
+.newstudent__form--data-box input {
+  box-sizing: border-box;
+  margin-top: 16px;
+
+  width: 320px;
+  height: 48px;
+  left: 333px;
+  top: 224px;
+
+  background: #ffffff;
+  border: 1px solid rgba(47, 73, 209, 0.6);
+  border-radius: 8px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  color: #000000;
+  padding: 0 10px;
+}
+
+/* button */
+
+.newstudent__form--btn {
+  display: flex;
+  justify-content: end;
+}
+
+button {
+  width: 314px;
+  height: 48px;
+  left: 1043px;
+  top: 424px;
+  border: none;
+  background: #2f49d1;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-right: -16px;
+  cursor: pointer;
+}
+/* TABLE */
+
+.studentlist {
+  width: 100%;
+  padding-bottom: 1px;
+}
+
+.studentlist__title {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+  color: #0061f7;
+  margin-bottom: 36px;
+  margin-left: 80px;
+}
+
+table {
+  width: 1025px;
+  border: 10px solid black;
+  margin: 0 auto 50px;
+  background-color: #fff;
+}
+
+thead {
+  background: #2f49d1;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  padding: 20px;
+  height: 62px;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 20px;
+  text-align: center;
+  border: none;
+}
+
+tbody tr {
+  width: 100%;
+}
+
+tbody {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.01em;
+  color: #00072d;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(0, 28, 175, 0.1);
+}
+
+.delete-teacher-btn {
+  cursor: pointer;
+}

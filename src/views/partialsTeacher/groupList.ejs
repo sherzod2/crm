@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="studentlist">
+      <div class="container">
+        <div class="studentlist__body">
+          <h1 class="studentlist__title">Your group</h1>
+
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 6%">№</th>
+                <th style="width: 37%">Group name</th>
+                <th>Group's course</th>
+              </tr>
+            </thead>
+            <tbody style="width: 100%">
+              <% groups?.map((group, index) => { %>
+              <tr>
+                <td><%= index+1 %></td>
+                <td><%= group?.groupName %></td>
+                <td><%= course?.courseName %></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          <div class="add-task-btn-wrapper">
+            <button class="add-task-btn">Add task</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="modal-wrapper">
+      <div class="overlay hidden"></div>
+      <div class="modal hidden">
+        <h3 class="modal__title">Send task</h3>
+        <form class="form" action="/newTask" method="POST">
+          <div class="newstudent__form--data-box">
+            <label>Student's group</label>
+            <select class="newstudent__course" name="groupId">
+              <option disabled selected>Groups</option>
+              <% groups?.map((group, index) => { %>
+              <option value="<%= group?.id %>"><%= group?.groupName %></option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="newstudent__form--data-box">
+            <label>Homework's name</label>
+            <input name="title" type="text" placeholder="name" />
+          </div>
+          <div class="newstudent__form--data-box">
+            <label>Homework's description</label>
+            <input type="text" name="desc" placeholder="description" />
+          </div>
+          <button class="form__btn" type="submit">Send</button>
+          <button class="modal__close" type="button">X</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
