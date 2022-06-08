@@ -4,6 +4,7 @@ const app = express();
 const ejs = require("ejs");
 const cookieParser = require("cookie-parser");
 const router = require("./routes/routes");
+const PORT = process.env.PORT;
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -14,4 +15,4 @@ app.use(express.json());
 app.use("/", router);
 app.use("/*", (_, res) => res.send("DON'T OK"));
 
-app.listen(7777, console.log(7777));
+app.listen(PORT, console.log(PORT));
